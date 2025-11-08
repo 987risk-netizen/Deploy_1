@@ -1,0 +1,130 @@
+/* Base styles for entire page */
+body { 
+  font-family: Arial, sans-serif;  /* Sets clean, readable font */
+  margin: 0;                        /* Removes default margin */
+  padding: 0;                       /* Removes default padding */
+  background: #f9f9f9;              /* Light gray background */
+  color: #333;                      /* Dark gray text color */
+  min-height: 100vh;                /* Full viewport height */
+  display: flex;                    /* Enables flexbox */
+  flex-direction: column;           /* Stacks children vertically */
+}
+
+/* Header section at top of page */
+header { 
+  background: #4CAF50;              /* Green background color */
+  color: white;                     /* White text */
+  padding: 15px;                    /* Space inside header */
+  text-align: center;               /* Centers the header text */
+}
+
+/* Navigation menu */
+nav { 
+  text-align: center;               /* Centers navigation links */
+  margin: 10px 0;                   /* Space above and below nav */
+}
+
+/* Individual navigation links */
+nav a { 
+  margin: 0 8px;                    /* Space between links */
+  color: #333;                      /* Dark text for links */
+  text-decoration: none;            /* Removes underline */
+  font-weight: bold;                /* Makes links bold */
+}
+
+/* Hover effect on navigation links */
+nav a:hover { 
+  text-decoration: underline;       /* Adds underline on hover */
+}
+
+/* Main content area */
+main { 
+  flex: 1;                          /* Takes remaining space for footer */
+  padding: 20px;                    /* Space inside main content */
+  width: 100%;                      /* Full width */
+  box-sizing: border-box;           /* Includes padding in width */
+}
+
+/* All h1 headings */
+h1 { 
+  margin-top: 0;                    /* Removes top margin */
+}
+
+/* Card component - used for content blocks */
+.card { 
+  background: #e3f2fd;              /* Light blue background */
+  padding: 22px;                    /* Space inside card */
+  border-radius: 8px;               /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);  /* Subtle shadow for depth */
+}
+
+/* Container for event cards - creates grid layout */
+.container { 
+  padding: 14px;                    /* Space inside container */
+  display: grid;                    /* Enables CSS grid layout */
+  gap: 16px;                        /* Space between grid items */
+  background: #f6fbff;              /* Subtle light blue background */
+  border-radius: 8px;               /* Rounded corners */
+  grid-template-columns: repeat(3, 1fr);  /* 3 columns for horizontal layout */
+}
+
+/* Footer at bottom of page */
+footer { 
+  text-align: center;               /* Centers footer text */
+  padding: 10px;                    /* Space inside footer */
+  font-size: 0.9em;                 /* Slightly smaller text */
+  color: #666;                      /* Gray text color */
+  margin-top: auto;                 /* Pushes to bottom */
+}
+
+/* Home page specific: centers welcome card vertically */
+body.home main { 
+  display: flex;                    /* Enables flexbox layout */
+  align-items: center;              /* Centers vertically */
+  justify-content: center;          /* Centers horizontally */
+  min-height: 60vh;                 /* Takes up 60% of viewport height */
+}
+
+/* Home page card: limits width and centers text */
+body.home .card { 
+  max-width: 700px;                 /* Limits card width */
+  text-align: center;               /* Centers all text in card */
+}
+
+/* Home page h1: makes it larger and bold */
+body.home .card h1 { 
+  font-size: 2rem;                  /* Large font size (32px) */
+  font-weight: 700;                 /* Extra bold */
+}
+
+/* Responsive: stack on smaller screens */
+@media (max-width: 700px) { 
+  .container { 
+    grid-template-columns: 1fr;  /* Single column on small screens */
+  } 
+}
+
+/* Contact form layout */
+.contact-form { 
+  display: flex;                    /* Enables flexbox */
+  flex-direction: column;           /* Stacks items vertically */
+  gap: 8px;                         /* Space between form fields */
+}
+
+/* Input fields and textarea styling */
+.contact-form input, 
+.contact-form textarea { 
+  padding: 10px;                    /* Space inside fields */
+  border: 1px solid #ddd;           /* Light gray border */
+  border-radius: 6px;               /* Rounded corners */
+}
+
+/* Submit button styling */
+.contact-form button { 
+  background: #4CAF50;              /* Green background (matches header) */
+  color: white;                     /* White text */
+  padding: 10px;                    /* Space inside button */
+  border: none;                     /* Removes default border */
+  border-radius: 6px;               /* Rounded corners */
+  cursor: pointer;                  /* Shows pointer cursor on hover */
+}
