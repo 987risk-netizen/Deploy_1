@@ -46,10 +46,15 @@ def registration():
             (request.form['name'], request.form['email'], request.form['mobile'], request.form['event'], request.form['password'])
         )
         db.commit()
+        last_id = cursor.lastrowid
+        # fetch the newly inserted row to display
+        cursor.execute('SELECT * FROM registrations WHERE id=?', (last_id,))
+        reg = cursor.fetchone()
+        # close DB
         cursor.close()
         db.close()
-        flash('Registration Done!')
-        return redirect('/registration')
+        # render page showing the registered info
+        return render_template('registration.html', registered=reg)
     return render_template('registration.html')
 
 if __name__ == '__main__':
