@@ -38,6 +38,16 @@
         <button type="submit">Register Now</button>
       </form>
     </div>
+    {% if registered %}
+    <div class="card">
+      <h2>Registration Successful</h2>
+      <p><strong>Name:</strong> {{ registered['name'] }}</p>
+      <p><strong>Email:</strong> {{ registered['email'] }}</p>
+      <p><strong>Mobile:</strong> {{ registered['mobile'] }}</p>
+      <p><strong>Event:</strong> {{ registered['event'] }}</p>
+      <p><strong>Registered at:</strong> {{ registered['created_at'] }}</p>
+    </div>
+    {% endif %}
   </main>
   <footer>© 2025 Simple Site</footer>
 
